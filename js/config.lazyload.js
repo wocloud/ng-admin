@@ -47,11 +47,10 @@ angular.module('app')
           events: true,
           modules: [
               {
-                  name: 'ngGrid',
+                  name: 'ui.grid',
                   files: [
-                      'vendor/modules/ng-grid/ng-grid.min.js',
-                      'vendor/modules/ng-grid/ng-grid.min.css',
-                      'vendor/modules/ng-grid/theme.css'
+                      'vendor/modules/ui-grid/ui-grid.min.js',
+                      'vendor/modules/ui-grid/ui-grid.min.css'
                   ]
               },
               {
@@ -88,8 +87,8 @@ angular.module('app')
               {
                   name: 'toaster',
                   files: [
-                      'vendor/modules/angularjs-toaster/toaster.js',
-                      'vendor/modules/angularjs-toaster/toaster.css'
+                      'vendor/modules/angularjs-toaster/toaster.min.js',
+                      'vendor/modules/angularjs-toaster/toaster.min.css'
                   ]
               },
               {

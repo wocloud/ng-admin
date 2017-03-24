@@ -165,16 +165,16 @@ angular.module('app')
               })
               .state('app.table.grid', {
                   url: '/grid',
-                  templateUrl: 'tpl/table_grid.html',
+                  templateUrl: 'tpl/table_ui_grid.html',
                   resolve: {
                       deps: ['$ocLazyLoad',
-                        function( $ocLazyLoad ){
-                          return $ocLazyLoad.load('ngGrid').then(
-                              function(){
-                                  return $ocLazyLoad.load('js/controllers/grid.js');
-                              }
-                          );
-                      }]
+                          function( $ocLazyLoad ){
+                              return $ocLazyLoad.load('ui.grid').then(
+                                  function(){
+                                      return $ocLazyLoad.load('js/controllers/uiGrid.js');
+                                  }
+                              );
+                          }]
                   }
               })
               // form
