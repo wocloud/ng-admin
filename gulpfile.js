@@ -79,10 +79,12 @@ gulp.task('default', ['clean'], function() {
 //watch all files change
 gulp.task('watch', function() {
 
-    gulp.watch('src/app/**/*.less', ['less']);
+    gulp.watch('src/app/*.less', ['less']);
+
+    gulp.watch('views/**');
 
     //gulp.watch('src/**/.ts', ['scripts']);
-    //
+
     //gulp.watch('src/index.html', ['html']) ;
 
     livereload.listen();

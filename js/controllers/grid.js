@@ -4,6 +4,7 @@
 'use strict';
 
 app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
+
     $scope.colArr = [
         {
             field: 'name',
@@ -44,19 +45,12 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
         { id:'14',name: "Nephi", age: 29, birthday: "May 31, 2010", salary: "50,000" },
         {id:'15', name: "Enos", age: 34, birthday: "Aug 3, 2008", salary: "30,000" }];
 
-    $scope.paginationCurrentPage = 1, $scope.paginationPageSize = 10, $scope.totalElements = 0;
     $scope.params = {grid: {}, fun: {}};
 
-    $scope.loadData = function(){
-        $scope.selectedItem = undefined;
-        $scope.totalElements = $scope.dataArr.length;
-    };
-    //the list of attrs
-    $scope.loadData($scope.paginationCurrentPage, $scope.paginationPageSize);
 
     // callback function
     $scope.callFn = function(item){
-        $scope.selectedItem = item;
+        $scope.testRow = item;
     };
 
     $scope.addData = function () {
@@ -114,8 +108,8 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
         $scope.params.grid = $scope.testRow;
         var modalInstance = $modal.open({
             backdrop: false,
-            templateUrl: 'resourcePool_update.html',
-            controller: 'rpAddCtrl',
+            templateUrl: 'table_ui_grid_update',
+            controller: 'auTCtrl',
             size: size,
             resolve : {
                 params: function () {

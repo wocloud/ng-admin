@@ -29,19 +29,6 @@
       "outIcon": "fa fa-wifi"
     },
     {
-      "id": "1af96d0e802f49deb88e8b9b01c60b5d",
-      "parentId": "38a478a0518549158610ed2672657ba8",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,38a478a0518549158610ed2672657ba8,",
-      "name": "服务配置",
-      "href": "http://139.170.148.145:9090/oss/#/app/system_service",
-      "target": "",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "",
-      "outIcon": "fa fa-share-alt-square"
-    },
-    {
       "id": "a0307bcadea942cfae92328cf131dea1",
       "parentId": "90ac18a9879b44609c53f7cad1ff7a8e",
       "parentIds": "0,1,94b6befdc31146a89973a37010688145,90ac18a9879b44609c53f7cad1ff7a8e,",
@@ -81,19 +68,6 @@
       "outIcon": "fa fa-bell-o"
     },
     {
-      "id": "e965f8ecebfe4060ae1c360a55c7680e",
-      "parentId": "6b0f3b93d1e248e0a27a244c8721b13c",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,6b0f3b93d1e248e0a27a244c8721b13c,",
-      "name": "资源视图",
-      "href": "http://139.170.148.145:9090/oss/#/app/full_screen_resource",
-      "target": "",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "",
-      "outIcon": "fa fa-codepen"
-    },
-    {
       "id": "851c1e3afc984fc59720a0d4cd2ad1ae",
       "parentId": "c748d8f5bc354ed8aec8cb5f64b43058",
       "parentIds": "0,1,94b6befdc31146a89973a37010688145,c748d8f5bc354ed8aec8cb5f64b43058,",
@@ -105,19 +79,6 @@
       "isShow": "1",
       "permission": "",
       "outIcon": "fa fa-hdd-o"
-    },
-    {
-      "id": "02d5c230df86434f99f060dbb76907a8",
-      "parentId": "76af9063672448789215ca5793bd04dc",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,76af9063672448789215ca5793bd04dc,",
-      "name": "工单配置",
-      "href": "http://139.170.148.145:9090/wocloud-workOrder-frontend/#/app/workOrderAttrs",
-      "target": "_blank",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "",
-      "outIcon": "fa fa-cogs"
     },
     {
       "id": "7784a83802cc47948bc88001f1bc6cf6",
@@ -137,7 +98,7 @@
       "parentId": "94b6befdc31146a89973a37010688145",
       "parentIds": "0,1,94b6befdc31146a89973a37010688145,",
       "name": "仪表盘",
-      "href": "#/app/dashboard-v1",
+      "href": "#/app/dashboard_v1",
       "target": "_blank",
       "icon": null,
       "sort": null,
@@ -183,19 +144,6 @@
       "isShow": "1",
       "permission": "",
       "outIcon": "fa fa-list-alt"
-    },
-    {
-      "id": "385d53a015b94ccdae993c33fd0fc90c",
-      "parentId": "76af9063672448789215ca5793bd04dc",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,76af9063672448789215ca5793bd04dc,",
-      "name": "工单处理",
-      "href": "http://139.170.148.145:9090/wocloud-workOrder-frontend/#/app/myWorkOrder",
-      "target": "_blank",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "",
-      "outIcon": "fa fa-clock-o"
     },
     {
       "id": "11573c513ac44037b4e87422d6aa3be3",
@@ -250,19 +198,6 @@
       "outIcon": "fa fa-pencil-square"
     },
     {
-      "id": "cc479396b8de49eca8ed2cc8901a1169",
-      "parentId": "6b0f3b93d1e248e0a27a244c8721b13c",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,6b0f3b93d1e248e0a27a244c8721b13c,",
-      "name": "业务视图",
-      "href": "http://139.170.148.145:9090/oss/#/app/full_screen_business",
-      "target": "",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "",
-      "outIcon": "fa fa-dribbble"
-    },
-    {
       "id": "586b4ae50b62416fb3bfc444c91ed874",
       "parentId": "90ac18a9879b44609c53f7cad1ff7a8e",
       "parentIds": "0,1,94b6befdc31146a89973a37010688145,90ac18a9879b44609c53f7cad1ff7a8e,",
@@ -287,19 +222,6 @@
       "isShow": "1",
       "permission": "",
       "outIcon": "glyphicon glyphicon-save"
-    },
-    {
-      "id": "25b780a57dfb4d81a9fa2f006d38ea1f",
-      "parentId": "76af9063672448789215ca5793bd04dc",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,76af9063672448789215ca5793bd04dc,",
-      "name": "工单查看",
-      "href": "http://139.170.148.145:9090/wocloud-workOrder-frontend/#/app/lkworkOrder",
-      "target": "_blank",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "",
-      "outIcon": "fa fa-search-plus"
     },
     {
       "id": "43a64eb7501e4adaaca7d2a43dec7364",
@@ -403,7 +325,7 @@
       "sort": null,
       "isShow": "1",
       "permission": "node:upper",
-      "outIcon": "iconfont icon-management"
+      "outIcon": "fa fa-eye"
     },
     {
       "id": "5aa9780bf76941abbf1a5eb4796537ff",
@@ -416,20 +338,7 @@
       "sort": null,
       "isShow": "1",
       "permission": "node:upper",
-      "outIcon": "iconfont icon-waring"
-    },
-    {
-      "id": "76af9063672448789215ca5793bd04dc",
-      "parentId": "94b6befdc31146a89973a37010688145",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,",
-      "name": "工单管理",
-      "href": "https://www.baidu.com/",
-      "target": "_blank",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "node:upper",
-      "outIcon": "iconfont icon-work"
+      "outIcon": "fa fa-warning"
     },
     {
       "id": "82bf0d878a48482794f1dee051073679",
@@ -442,7 +351,7 @@
       "sort": null,
       "isShow": "1",
       "permission": "node:upper",
-      "outIcon": "iconfont icon-resource"
+      "outIcon": "fa fa-cubes"
     },
     {
       "id": "17b5cdef8d614a1b80d72613f862783e",
@@ -455,7 +364,7 @@
       "sort": null,
       "isShow": "1",
       "permission": "node:upper",
-      "outIcon": "iconfont icon-business"
+      "outIcon": "fa fa-th-list"
     },
     {
       "id": "39430e3d92fd467dbec6da64b763eceb",
@@ -468,20 +377,7 @@
       "sort": null,
       "isShow": "1",
       "permission": "node:upper",
-      "outIcon": "fa fa-th-list"
-    },
-    {
-      "id": "38a478a0518549158610ed2672657ba8",
-      "parentId": "94b6befdc31146a89973a37010688145",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,",
-      "name": "性能管理",
-      "href": "",
-      "target": "",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "node:upper",
-      "outIcon": "fa fa-circle-o-notch"
+      "outIcon": "fa fa-linode"
     },
     {
       "id": "c748d8f5bc354ed8aec8cb5f64b43058",
@@ -507,7 +403,7 @@
       "sort": null,
       "isShow": "1",
       "permission": "node:upper",
-      "outIcon": "iconfont icon-logs"
+      "outIcon": "fa fa-tasks"
     },
     {
       "id": "6f8ff180f36049f09764230196ece4bd",
@@ -520,20 +416,7 @@
       "sort": null,
       "isShow": "1",
       "permission": "node:upper",
-      "outIcon": "iconfont icon-system"
-    },
-    {
-      "id": "6b0f3b93d1e248e0a27a244c8721b13c",
-      "parentId": "94b6befdc31146a89973a37010688145",
-      "parentIds": "0,1,94b6befdc31146a89973a37010688145,",
-      "name": "数据可视化",
-      "href": "",
-      "target": "_blank",
-      "icon": null,
-      "sort": null,
-      "isShow": "1",
-      "permission": "node:upper",
-      "outIcon": "iconfont icon-management"
+      "outIcon": "fa fa-circle-o-notch"
     }
   ]
 }
