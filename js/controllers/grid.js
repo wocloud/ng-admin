@@ -47,7 +47,6 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
 
     $scope.params = {grid: {}, fun: {}};
 
-
     // callback function
     $scope.callFn = function(item){
         $scope.testRow = item;

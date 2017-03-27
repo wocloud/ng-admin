@@ -8,8 +8,7 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                 colArr:'=',
                 callFn:'='
             },
-            template: '<div ui-grid="gridOptions"  style="width: 100%; height: 100%; text-align: center;"  ' +
-            'ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize></div>',
+            template: '<div ui-grid="gridOptions"  style="width: 100%; height: 100%;" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>',
             link: function(scope, elem, attrs){
 
                 i18nService.setCurrentLang("zh-cn");

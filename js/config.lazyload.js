@@ -36,8 +36,7 @@ angular.module('app')
                           'vendor/jquery/jvectormap/jquery-jvectormap-us-aea-en.js',
                           'vendor/jquery/jvectormap/jquery-jvectormap.css'],
       footable:       ['vendor/jquery/footable/footable.all.min.js',
-                          'vendor/jquery/footable/footable.core.css'],
-      echarts:        ['vendor/modules/echarts/echarts.min.js']
+                          'vendor/jquery/footable/footable.core.css']
       }
   )
   // oclazyload config
@@ -47,6 +46,14 @@ angular.module('app')
           debug:  false,
           events: true,
           modules: [
+              //{
+              //    name: 'ui.grid',
+              //    files: [
+              //        'vendor/modules/ui-grid/ui-grid.min.js',
+              //        'vendor/modules/ui-grid/ui-grid.min.css',
+              //        'js/directives/sf-ui-grid.js'
+              //    ]
+              //},
               {
                   name: 'ui.select',
                   files: [
