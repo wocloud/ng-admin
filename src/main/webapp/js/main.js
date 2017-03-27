@@ -3,8 +3,8 @@
 /* Controllers */
 
 angular.module('app')
-  .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', '$http',
-    function($scope, $translate, $localStorage, $window, $http) {
+  .controller('AppCtrl', ['$scope', '$translate', '$localStorage', '$window', '$http', 'User', '$cookieStore',
+    function($scope, $translate, $localStorage, $window, $http, User, $cookieStore) {
       // add 'ie' classes to html
       var isIE = !!navigator.userAgent.match(/MSIE/i);
       isIE && angular.element($window.document.body).addClass('ie');
@@ -74,9 +74,8 @@ angular.module('app')
       }
 
       // nav
-      $scope.navs = [];
-      $http.get('./js/menu.json').success(function (data) {
-        var datas = data.result;
+      function convertNavData(datas) {
+        $scope.navs = [];
         angular.forEach(datas, function(a, b, c){
           a.children=[];
 
@@ -89,6 +88,25 @@ angular.module('app')
           });
           $scope.navs.push(a);
         });
+      }
+
+      //demo menu
+      $http.get('./js/menu.json').success(function (data) {
+        var datas = data.result;
+        convertNavData(datas);
+      });
+
+      //login and get user's info
+      User.getUserInfo().then(function(userInfo){
+        $cookieStore.put('userInfo', userInfo);
+        console.log($cookieStore.get('userInfo'));
+        //get menu real......
+        //var params={
+        //  userName:userInfo.userName
+        //};
+        //User.getUserMenu(params).then(function(userMenu){
+        //  convertNavData(userMenu.result);
+        //});
       });
 
   }]);

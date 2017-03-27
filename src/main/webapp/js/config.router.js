@@ -307,16 +307,16 @@ angular.module('app')
                   url: '/access',
                   template: '<div ui-view class="fade-in-right-big smooth"></div>'
               })
-              .state('access.signin', {
-                  url: '/signin',
-                  templateUrl: 'tpl/page_signin.html',
-                  resolve: {
-                      deps: ['uiLoad',
-                        function( uiLoad ){
-                          return uiLoad.load( ['js/controllers/signin.js'] );
-                      }]
-                  }
-              })
+              //.state('access.signin', {
+              //    url: '/signin',
+              //    templateUrl: 'tpl/page_signin.html',
+              //    resolve: {
+              //        deps: ['uiLoad',
+              //          function( uiLoad ){
+              //            return uiLoad.load( ['js/controllers/signin.js'] );
+              //        }]
+              //    }
+              //})
               .state('access.signup', {
                   url: '/signup',
                   templateUrl: 'tpl/page_signup.html',
@@ -325,6 +325,16 @@ angular.module('app')
                         function( uiLoad ){
                           return uiLoad.load( ['js/controllers/signup.js'] );
                       }]
+                  }
+              })
+              .state('access.signout', {
+                  url: '/signout',
+                  templateUrl: 'tpl/page_signout.html',
+                  resolve: {
+                      deps: ['uiLoad',
+                          function( uiLoad ){
+                              return uiLoad.load( ['js/controllers/signout.js'] );
+                          }]
                   }
               })
               .state('access.forgotpwd', {

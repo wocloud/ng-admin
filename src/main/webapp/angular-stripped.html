@@ -263,8 +263,8 @@
                 </a>
               </li>
               <li class="divider"></li>
-              <li>
-                <a ui-sref="access.signin">Logout</a>
+              <li ng-controller="SignOutController">
+                <a ui-sref="access.signout">Logout</a>
               </li>
             </ul>
             <!-- / dropdown -->
@@ -320,8 +320,8 @@
                   </a>
                 </li>
                 <li class="divider"></li>
-                <li>
-                  <a ui-sref="access.signin">Logout</a>
+                <li ng-controller="SignOutController">
+                  <a ui-sref="access.signout">Logout</a>
                 </li>
               </ul>
               <!-- / dropdown -->
@@ -659,11 +659,11 @@
                       <span translate="aside.nav.components.pages.LOCK_SCREEN">Lock screen</span>
                     </a>
                   </li>
-                  <li>
-                    <a ui-sref="access.signin">
-                      <span translate="aside.nav.components.pages.SIGNIN">Signin</span>
-                    </a>
-                  </li>
+                  <!--<li>-->
+                    <!--<a ui-sref="access.signin">-->
+                      <!--<span translate="aside.nav.components.pages.SIGNIN">Signin</span>-->
+                    <!--</a>-->
+                  <!--</li>-->
                   <li>
                     <a ui-sref="access.signup">
                       <span translate="aside.nav.components.pages.SIGNUP">Signup</span>

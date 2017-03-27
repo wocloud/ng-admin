@@ -2,6 +2,9 @@
 
 var app =  
 angular.module('app')
+  .constant('SERVICE_URL', {
+      cas : 'http://10.10.182.173:8080/cas'
+  })
   .config(
     [        '$controllerProvider', '$compileProvider', '$filterProvider', '$provide',
     function ($controllerProvider,   $compileProvider,   $filterProvider,   $provide) {
