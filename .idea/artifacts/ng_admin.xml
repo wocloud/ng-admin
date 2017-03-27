@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ng-admin">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="root">
+      <element id="dir-copy" path="$PROJECT_DIR$" />
+      <element id="javaee-facet-resources" facet="ng-admin/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ng-admin" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
