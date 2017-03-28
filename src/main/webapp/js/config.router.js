@@ -109,6 +109,19 @@ angular.module('app')
                       }]
                   }
               })
+              .state('app.ui.echartsmap', {
+                  url: '/echartsmap',
+                  templateUrl: 'tpl/ui_echartsmap.html',
+                  resolve: {
+                      deps: ['$ocLazyLoad',
+                          function( $ocLazyLoad ){
+                              return $ocLazyLoad.load(
+                                  ['vendor/modules/echarts/china.js',
+                                      'js/controllers/echartsmap.js']
+                              );
+                          }]
+                  }
+              })
               .state('app.ui.jvectormap', {
                   url: '/jvectormap',
                   templateUrl: 'tpl/ui_jvectormap.html',

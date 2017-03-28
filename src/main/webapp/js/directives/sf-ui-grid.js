@@ -8,7 +8,7 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                 colArr:'=',
                 callFn:'='
             },
-            template: '<div ui-grid="gridOptions"  style="width: 100%; height: 100%;" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>',
+            template: '<div ui-grid="gridOptions" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>',
             link: function(scope, elem, attrs){
 
                 i18nService.setCurrentLang("zh-cn");
@@ -17,7 +17,7 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                     columnDefs: scope.colArr,
                     enableSorting: true, //是否排序
                     useExternalSorting: false, //是否使用自定义排序规则
-                    enableGridMenu: true, //是否显示grid 菜单
+                    enableGridMenu: false, //是否显示grid 菜单
                     showGridFooter: false, //是否显示grid footer
                     enableHorizontalScrollbar :  1, //grid水平滚动条是否显示, 0-不显示  1-显示
                     enableVerticalScrollbar : 0, //grid垂直滚动条是否显示, 0-不显示  1-显示
@@ -25,7 +25,7 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                     //-------- 分页属性 ----------------
                     enablePagination: true, //是否分页，默认为true
                     enablePaginationControls: true, //使用默认的底部分页
-                    paginationPageSizes: [10, 15, 20], //每页显示个数可选项
+                    paginationPageSizes: [10, 20, 50], //每页显示个数可选项
                     paginationCurrentPage:1, //当前页码
                     paginationPageSize: 10, //每页显示个数
                     //paginationTemplate:"<div></div>", //自定义底部分页代码

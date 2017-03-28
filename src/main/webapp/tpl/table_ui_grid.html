@@ -1,45 +1,43 @@
 <div class="bg-light lter b-b wrapper-md">
     <h1 class="m-n font-thin h3">sf-ui-grid</h1>
 </div>
-<div class="wrapper-md">
-    <div class="panel panel-default" ng-controller="GridDemoCtrl">
-        <div class="row no-padder m-n">
-            <div class="col-sm-6 m-t-xs m-b-xs no-padder " >
-                <script type="text/ng-template" id="table_ui_grid_add">
-                    <div ng-include="'tpl/table_ui_grid_add.html'"></div>
-                </script>
-                <script type="text/ng-template" id="table_ui_grid_update">
-                    <div ng-include="'tpl/table_ui_grid_update.html'"></div>
-                </script>
-                <script type="text/ng-template" id="table_ui_grid_delete">
-                    <div class="modal-header">
-                        <h3 class="modal-title">提示</h3>
-                    </div>
-                    <div class="modal-body" id="msgInfo">
-                        确认要删除？
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-blue" ng-click="ok()">OK</button>
-                        <button class="btn btn-dark" ng-click="cancel()">Cancel</button>
-                    </div>
-                </script>
-                <div>
-                    <button class="btn btn-primary" ng-click="addData()">
-                        <i class="fa fa-plus "></i>
-                        <span class="btn-name">添加</span>
-                    </button>
-                    <button class="btn btn-primary" ng-click="updateData()">
-                        <i class="icon-pencil"></i>
-                        <span class="btn-name">修改</span>
-                    </button>
-                    <button class="btn btn-primary" ng-click="delData('sm')">
-                        <i class="glyphicon glyphicon-remove"></i>
-                        <span class="btn-name">删除</span>
-                    </button>
+<div class="wrapper-md" ng-controller="GridDemoCtrl">
+    <div class="row no-padder m-n">
+        <div class="col-sm-6 m-t-xs m-b-xs no-padder " >
+            <script type="text/ng-template" id="table_ui_grid_add">
+                <div ng-include="'tpl/table_ui_grid_add.html'"></div>
+            </script>
+            <script type="text/ng-template" id="table_ui_grid_update">
+                <div ng-include="'tpl/table_ui_grid_update.html'"></div>
+            </script>
+            <script type="text/ng-template" id="table_ui_grid_delete">
+                <div class="modal-header">
+                    <h3 class="modal-title">提示</h3>
                 </div>
+                <div class="modal-body" id="msgInfo">
+                    确认要删除？
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-blue" ng-click="ok()">OK</button>
+                    <button class="btn btn-dark" ng-click="cancel()">Cancel</button>
+                </div>
+            </script>
+            <div>
+                <button class="btn btn-primary btn-sm" ng-click="addData()">
+                    <i class="fa fa-plus "></i>
+                    <span class="btn-name">添加</span>
+                </button>
+                <button class="btn btn-primary btn-sm" ng-click="updateData()">
+                    <i class="fa fa-pencil"></i>
+                    <span class="btn-name">修改</span>
+                </button>
+                <button class="btn btn-primary btn-sm" ng-click="delData('sm')">
+                    <i class="fa fa-remove"></i>
+                    <span class="btn-name">删除</span>
+                </button>
             </div>
         </div>
-
-        <sf-ui-grid class="myGrid" arr="dataArr" col-arr="colArr" call-fn="callFn"></sf-ui-grid>
     </div>
+
+    <sf-ui-grid arr="dataArr" col-arr="colArr" call-fn="callFn"></sf-ui-grid>
 </div>

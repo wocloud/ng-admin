@@ -70,7 +70,7 @@
 		var $icon = icon ? $("<div>").addClass("bigIcon").css("backgroundPosition",icon) : "";
 		var btn = config.btn;//按钮组生成参数
 		
-		var popId = creatPopId();//弹窗索引
+		var popId = createPopId();//弹窗索引
 		
 		var $box = $("<div>").addClass("xcConfirm");//弹窗插件容器
 		var $layer = $("<div>").addClass("xc_layer");//遮罩层
@@ -79,10 +79,12 @@
 		var $txtBox = $("<div>").addClass("txtBox");//弹窗内容主体区
 		var $btnArea = $("<div>").addClass("btnArea");//按钮区域
 		
-		var $ok = $("<a>").addClass("sgBtn").addClass("ok").text("确定");//确定按钮
-		var $cancel = $("<a>").addClass("sgBtn").addClass("cancel").text("取消");//取消按钮
+		//var $ok = $("<a>").addClass("sgBtn").addClass("ok").text("确定");//确定按钮
+		//var $cancel = $("<a>").addClass("sgBtn").addClass("cancel").text("取消");//取消按钮
+		var $ok = $("<a>").addClass("btn btn-sm btn-primary").addClass("ok").text("确定");//确定按钮
+		var $cancel = $("<a>").addClass("btn btn-sm btn-default").addClass("cancel").text("取消");//取消按钮
 		var $input = $("<input>").addClass("inputBox");//输入框
-		var $clsBtn = $("<a>").addClass("clsBtn");//关闭按钮
+		var $clsBtn = $("<a>").addClass("close").text("x");//关闭按钮
 		
 		//建立按钮映射关系
 		var btns = {
@@ -112,7 +114,7 @@
 			).append(
 				$txtBox.append($icon).append($txt)
 			).append(
-				$btnArea.append(creatBtnGroup(btn))
+				$btnArea.append(createBtnGroup(btn))
 			);
 			$box.attr("id", popId).append($layer).append($popBox);
 			$("body").append($box);
@@ -166,7 +168,7 @@
 		}
 		
 		//生成按钮组
-		function creatBtnGroup(tp){
+		function createBtnGroup(tp){
 			var $bgp = $("<div>").addClass("btnGroup");
 			$.each(btns, function(i, n){
 				if( btnType[i] == (tp & btnType[i]) ){
@@ -177,10 +179,10 @@
 		}
 
 		//重生popId,防止id重复
-		function creatPopId(){
+		function createPopId(){
 			var i = "pop_" + (new Date()).getTime()+parseInt(Math.random()*100000);//弹窗索引
 			if($("#" + i).length > 0){
-				return creatPopId();
+				return createPopId();
 			}else{
 				return i;
 			}

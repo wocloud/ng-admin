@@ -91,10 +91,10 @@ angular.module('app')
       }
 
       //demo menu
-      $http.get('./js/menu.json').success(function (data) {
-        var datas = data.result;
-        convertNavData(datas);
-      });
+      //$http.get('./js/menu.json').success(function (data) {
+      //  var datas = data.result;
+      //  convertNavData(datas);
+      //});
 
       //login and get user's info
       User.getUserInfo().then(function(userInfo){
