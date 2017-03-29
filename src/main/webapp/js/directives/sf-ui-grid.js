@@ -8,10 +8,13 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                 colArr:'=',
                 callFn:'='
             },
-            template: '<div ui-grid="gridOptions" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>',
+            template: '<div ui-grid="gridOptions" style="height: 100%;" ui-grid-edit ui-grid-pagination ui-grid-selection ui-grid-resize-columns ui-grid-auto-resize></div>',
             link: function(scope, elem, attrs){
 
                 i18nService.setCurrentLang("zh-cn");
+
+                //var index = 0;
+                scope.selectedRows = [];
 
                 scope.gridOptions = {
                     columnDefs: scope.colArr,
@@ -25,13 +28,12 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                     //-------- 分页属性 ----------------
                     enablePagination: true, //是否分页，默认为true
                     enablePaginationControls: true, //使用默认的底部分页
-                    paginationPageSizes: [10, 20, 50], //每页显示个数可选项
+                    paginationPageSizes: [10, 15, 50, 100], //每页显示个数可选项
                     paginationCurrentPage:1, //当前页码
-                    paginationPageSize: 10, //每页显示个数
+                    paginationPageSize: 15, //每页显示个数
                     //paginationTemplate:"<div></div>", //自定义底部分页代码
                     totalItems : 0, // 总数量
                     useExternalPagination: true,//是否使用分页按钮
-
 
                     //----------- 选中 ----------------------
                     enableFooterTotalSelected: true, // 是否显示选中的总数，默认为true, 如果显示，showGridFooter 必须为true
@@ -40,12 +42,14 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                     enableRowSelection : true, // 行选择是否可用，默认为true;
                     enableSelectAll : true, // 选择所有checkbox是否可用，默认为true;
                     enableSelectionBatchEvent : true, //默认true
-                    isRowSelectable: function(row){ //GridRow
-                        if(row.entity.age > 45){
-                            //row.grid.api.selection.selectRow(row.entity); // 选中行
-                        }
-                    },
-                    modifierKeysToMultiSelect: true ,//默认false,为true时只能 按ctrl或shift键进行多选, multiSelect 必须为true;
+                    //isRowSelectable: function(row){ //GridRow
+                    //    index += 1;
+                    //    if (index == 1) {   //默认选中第一行
+                    //        row.grid.api.selection.selectRow(row.entity);
+                    //        scope.selectedRows.push(row.entity);
+                    //    }
+                    //},
+                    modifierKeysToMultiSelect: false ,//默认false,为true时只能 按ctrl或shift键进行多选, multiSelect 必须为true;
                     multiSelect: true ,// 是否可以选择多个,默认为true;
                     noUnselect: false,//默认false,选中后是否可以取消选中
                     selectionRowHeaderWidth:30 ,//默认30 ，设置选择列的宽度；
@@ -62,15 +66,21 @@ angular.module('sf.ui.grid', ['ui.grid', 'ui.grid.selection', 'ui.grid.edit', 'u
                         });
                         //行选中事件
                         scope.gridApi.selection.on.rowSelectionChanged(scope,function(row,event){
-                            if(row){
-                                scope.testRow = row.entity;
-                                scope.callFn(scope.testRow);
+                            if(row && row.isSelected){
+                                scope.selectedRows.push(row.entity);
+                            } else {
+                                var indexNum = $.inArray(row.entity, scope.selectedRows);
+                                if(indexNum > -1) {
+                                    scope.selectedRows.splice(indexNum, 1);
+                                }
                             }
+                            scope.callFn(scope.selectedRows);
                         });
                     }
                 };
 
                 var getPage = function(curPage, pageSize) {
+                    //index = 0;
                     var firstRow = (curPage - 1) * pageSize;
                     scope.gridOptions.totalItems = mydefalutData.length;
                     scope.gridOptions.data = mydefalutData.slice(firstRow, firstRow + pageSize);

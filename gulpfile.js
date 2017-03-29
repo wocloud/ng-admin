@@ -13,7 +13,7 @@ var gulp = require('gulp'),
 
 //styles
 gulp.task('less', function() {
-    return gulp.src('src/main/webapp/style/*.less')
+    return gulp.src('src/main/webapp/style/**.less')
         .pipe(less())
         .pipe(concat('app.css'))
         .pipe(rename({ suffix: '.min' }))
@@ -25,7 +25,7 @@ gulp.task('less', function() {
 //watch all files change
 gulp.task('watch', function() {
 
-    gulp.watch('src/main/webapp/style/*.less', ['less']);
+    gulp.watch('src/main/webapp/style/**.less', ['less']);
 
     livereload.listen();
 

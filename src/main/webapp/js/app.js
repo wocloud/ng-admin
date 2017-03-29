@@ -21,5 +21,6 @@ angular.module('app', [
     'ui.grid.pagination',
     'ui.grid.resizeColumns',
     'ui.grid.autoResize',
-    'sf.ui.grid'
+    'sf.ui.grid',
+    'sf.console'
 ]);

@@ -1,0 +1,35 @@
+{
+  "name": "ng-admin",
+  "version": "1.0.0",
+  "description": "Angularjs Admin Template",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^3.3.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wocloud/ng-admin.git"
+  },
+  "keywords": [
+    "angularjs",
+    "admin",
+    "template",
+    "bootstrap"
+  ],
+  "author": "sophia.wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wocloud/ng-admin/issues"
+  },
+  "homepage": "https://github.com/wocloud/ng-admin#readme"
+}

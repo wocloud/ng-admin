@@ -8,7 +8,12 @@ angular.module('app')
     ['$rootScope', '$state', '$stateParams',
       function ($rootScope,   $state,   $stateParams) {
           $rootScope.$state = $state;
-          $rootScope.$stateParams = $stateParams;        
+          $rootScope.$stateParams = $stateParams;
+
+          $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+              $rootScope.currentPage = toState;
+              $rootScope.previousPage = fromState;
+          });
       }
     ]
   )
@@ -179,6 +184,16 @@ angular.module('app')
               .state('app.table.grid', {
                   url: '/grid',
                   templateUrl: 'tpl/table_ui_grid.html',
+                  resolve: {
+                      deps: ['$ocLazyLoad',
+                          function( $ocLazyLoad ){
+                              return $ocLazyLoad.load('js/controllers/grid.js');
+                          }]
+                  }
+              })
+              .state('app.table.grid-detail', {
+                  url: '/grid-detail:name',
+                  templateUrl: 'tpl/table_ui_grid_detail.html',
                   resolve: {
                       deps: ['$ocLazyLoad',
                           function( $ocLazyLoad ){

@@ -23,7 +23,8 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
             enableColumnMenu: false,// 是否显示列头部菜单按钮
             enableHiding: false,
             suppressRemoveSort: true,
-            enableCellEdit: false // 是否可编辑
+            enableCellEdit: false, // 是否可编辑
+            cellTemplate: '<a class="text-info-dk" ui-sref="app.table.grid-detail({name: row.entity.name})">{{ row.entity.name }}</a>'
         },
         {
             field: "position",
@@ -756,9 +757,12 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
 
     // callback function
     $scope.callFn = function(item){
-        $scope.testRow = item;
+        $scope.selectedRows = item;
     };
 
+    ///////////////////////////////////////////////////
+    /////////////////// Events ////////////////////////
+    ///////////////////////////////////////////////////
     $scope.addData = function () {
         $scope.params.grid = {state: "enabled"};
         $scope.params.fun = {name: "添加"};
@@ -792,7 +796,7 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
             controller: 'delTCtrl',
             size: size,
             resolve: {
-                testRow: function () {
+                selectedRows: function () {
                     return $scope.rowItem;
                 }
             }
@@ -806,12 +810,12 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
     };
 
     $scope.updateData = function (size) {
-        if (!$scope.testRow) {
+        if (!$scope.selectedRows) {
             window.wxc.xcConfirm("请选择要修改的数据！", window.wxc.xcConfirm.typeEnum.info);
             return;
         }
         $scope.params.fun = {name:"修改"};
-        $scope.params.grid = $scope.testRow;
+        $scope.params.grid = $scope.selectedRows;
         var modalInstance = $modal.open({
             backdrop: false,
             templateUrl: 'table_ui_grid_update',
@@ -834,6 +838,13 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
             }
         }
     }
+});
+
+///////////////////////////////////////////////////
+/////////////////// Detail ////////////////////////
+///////////////////////////////////////////////////
+app.controller('GridDetailDemoCtrl', function($scope, $stateParams) {
+    $scope.current = $stateParams.name;
 });
 
 //新增修改
@@ -862,13 +873,13 @@ app.controller('auTCtrl', ['$scope', '$modalInstance', '$timeout', 'params', fun
 }]);
 
 //删除
-app.controller('delTCtrl', ['$scope', '$modalInstance', 'testRow', function ($scope, $modalInstance, testRow) {
+app.controller('delTCtrl', ['$scope', '$modalInstance', 'selectedRows', function ($scope, $modalInstance, selectedRows) {
     $scope.ok = function () {
-        if (!testRow) {
+        if (!selectedRows) {
             $("#msgInfo").text("未选择删除的资源！");
             return;
         }
-        $modalInstance.close(testRow);
+        $modalInstance.close(selectedRows);
     };
 
     $scope.cancel = function () {

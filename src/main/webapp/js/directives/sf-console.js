@@ -1,7 +1,7 @@
 /**
- * Created by sophia.wang on 17/3/28.
+ * Created by sophia.wang on 17/3/29.
  */
-angular.module('sf.state', [])
+angular.module('sf.console', [])
     .directive('sfState', function($compile) {
         return {
             restrict: 'AE',
@@ -11,7 +11,7 @@ angular.module('sf.state', [])
             },
             replace:true,
             template:'<span class="state">' +
-                '<i class="text-xs mr-6"></i><span translate="{{type}}.state.{{state}}"></span>' +
+            '<i class="text-xs mr-6"></i><span translate="{{type}}.state.{{state}}"></span>' +
             '</span>',
             link: function(scope, elem, attrs){
                 var i =  elem.find("i");

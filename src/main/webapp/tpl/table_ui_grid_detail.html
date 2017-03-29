@@ -1,0 +1,129 @@
+<div ng-controller="GridDetailDemoCtrl">
+    <div class="bg-light lter b-b wrapper padder-v-xs">
+        <div class="breadcrumbs">
+            <a class="path" ui-sref="app">Application /</a>
+            <a class="path" ui-sref="app.table.grid">uiGrid /</a>
+            <a class="path" ui-sref="app.table.grid-detail({name: current})">{{current}}</a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Basic information</div>
+                    <div class="panel-body">
+                        <div class="text-center m-b clearfix">
+                            <div class="thumb-lg avatar m-t-n-xxl">
+                                <img src="img/a5.jpg" alt="..." class="b b-3x b-white">
+                                <div class="h4 font-thin m-t-sm">{{current}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Relationship</div>
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <a href class="list-group-item">
+                                <span class="badge badge-empty">in NewYork</span>Grandma
+                            </a>
+                            <a href class="list-group-item">
+                                <span class="badge bg-info">package for holiday</span>Parents
+                            </a>
+                            <a href class="list-group-item">
+                                <span class="badge bg-success">cooker, always busy for eating</span>Big Brother
+                            </a>
+                            <a href class="list-group-item">
+                                <span class="badge bg-dark">study for PHD</span>Little Sister
+                            </a>
+                            <a href class="list-group-item">
+                                <span class="badge bg-warning">solider,in army</span>Little Brother
+                            </a>
+                            <a href class="list-group-item">
+                                <span class="badge bg-info">cleaner, own a company</span>Schoolmate
+                            </a>
+                            <a href class="list-group-item">
+                                <span class="badge bg-danger">haha, coding</span>Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <ul class="timeline">
+                    <li class="tl-header">
+                        <div class="btn btn-info">Now</div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">15:00</span>
+                            <div class="tl-content">
+                                Have a coffee
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">15:00</span>
+                            <div class="tl-content">
+                                Have a coffee
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">15:00</span>
+                            <div class="tl-content">
+                                Have a coffee
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">13:30</span>
+                            <div class="tl-content">
+                                Start to work
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">12:00</span>
+                            <div class="tl-content">
+                                Have lunch
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">9:00</span>
+                            <div class="tl-content">
+                                Start to work
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">8:00</span>
+                            <div class="tl-content">
+                                Go to work
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-wrap b-info">
+                            <span class="tl-date">7:00</span>
+                            <div class="tl-content">
+                                Get up and have breakfast
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tl-header">
+                        <div class="btn btn-sm btn-default btn-rounded">more</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

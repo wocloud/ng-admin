@@ -16,3 +16,7 @@ Angular 1.3.x, Bootstrap 3.3.x, FontAwesome 4.7.x and lots of awesome modules an
 
 ##License
 [MIT](LICENSE.txt) license.
+
+##Run(if you want to change the style)
+>>npm install -g gulp
+>>npm install
