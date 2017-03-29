@@ -4,8 +4,6 @@
     <list default="true" id="5e3e6673-62b3-4399-8f6f-57a97191e6f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" />
     </list>
     <ignored path="ng-admin.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,8 +80,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1006424">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.54603857">
+              <caret line="20" column="18" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -102,8 +100,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5">
-              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -180,9 +178,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/js/app.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/style/less/app.plugin.less" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/main.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1035,7 +1033,7 @@
       <workItem from="1490429038224" duration="1306000" />
       <workItem from="1490576698856" duration="20484000" />
       <workItem from="1490664790696" duration="14145000" />
-      <workItem from="1490750310447" duration="16373000" />
+      <workItem from="1490750310447" duration="16557000" />
     </task>
     <task id="LOCAL-00001" summary="0323 : dynamic menu">
       <created>1490258603969</created>
@@ -1085,11 +1083,23 @@
       <option name="project" value="LOCAL" />
       <updated>1490778129916</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="0329: grid detail">
+      <created>1490780580150</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1490780580150</updated>
+    </task>
+    <task id="LOCAL-00010" summary="0329: readme">
+      <created>1490780700695</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1490780700695</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84851000" />
+    <option name="totallyTimeSpent" value="85035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1184,7 +1194,8 @@
     <MESSAGE value="0326 : userInfo save" />
     <MESSAGE value="0327: xcConfirm and form style" />
     <MESSAGE value="0329: grid detail" />
-    <option name="LAST_COMMIT_MESSAGE" value="0329: grid detail" />
+    <MESSAGE value="0329: readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="0329: readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1422,14 +1433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1438,10 +1441,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1006424">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.54603857">
+          <caret line="20" column="18" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -14,12 +14,12 @@ Angular 1.3.x, Bootstrap 3.3.x, FontAwesome 4.7.x and lots of awesome modules an
 * jQuery
 * and many more!
 
-##License
+## License
 [MIT](LICENSE.txt) license.
 
-##Run(if you want to change the style)
-* >>npm install -g gulp
-* >>npm install
+## Run(if you want to change the style)
+* npm install -g gulp
+* npm install
 
 ## 新添加的信息
 * 1 \ 与cas结合, 项目变为maven项目, 使用时请注意打包.
