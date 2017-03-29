@@ -99,7 +99,6 @@ angular.module('app')
       //login and get user's info
       User.getUserInfo().then(function(userInfo){
         $cookieStore.put('userInfo', userInfo);
-        console.log($cookieStore.get('userInfo'));
         //get menu real......
         //var params={
         //  userName:userInfo.userName
