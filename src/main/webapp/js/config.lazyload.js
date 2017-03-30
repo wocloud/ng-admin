@@ -46,14 +46,21 @@ angular.module('app')
           debug:  false,
           events: true,
           modules: [
-              //{
-              //    name: 'ui.grid',
-              //    files: [
-              //        'vendor/modules/ui-grid/ui-grid.min.js',
-              //        'vendor/modules/ui-grid/ui-grid.min.css',
-              //        'js/directives/sf-ui-grid.js'
-              //    ]
-              //},
+              {
+                  name: 'ui.grid',
+                  files: [
+                      'vendor/modules/ui-grid/ui-grid.min.js',
+                      'vendor/modules/ui-grid/ui-grid.min.css'
+                  ]
+              },
+              {
+                  name: 'sf.ui.grid',
+                  files: [
+                      'vendor/modules/ui-grid/ui-grid.min.js',
+                      'vendor/modules/ui-grid/ui-grid.min.css',
+                      'js/directives/sf-ui-grid.js'
+                  ]
+              },
               {
                   name: 'ui.select',
                   files: [

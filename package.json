@@ -9,6 +9,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-less": "^3.3.0",
     "gulp-livereload": "^3.8.1",
+    "gulp-minify-html": "^1.0.6",
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2"
   },

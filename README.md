@@ -30,3 +30,5 @@ Angular 1.3.x, Bootstrap 3.3.x, FontAwesome 4.7.x and lots of awesome modules an
     sf.ui.grid使用, 参见 'Table/uiGrid' (自制, 查漏补缺中).
 * 5 \ 引入xcConfirm作为操作前提示弹出框, toaster作为操作结果提示弹出框;
 * 6 \ 引入echarts, 示例参见 'uiKits/echartsMap'
+## 需要注意的信息
+* 请使用已有的样式进行开发, 避免使用自定义样式, 减轻后续ui人员负担; 所有业务页面请放在views文件夹下.

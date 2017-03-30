@@ -14,13 +14,5 @@ angular.module('app', [
     'ui.jq',
     'ui.validate',
     'oc.lazyLoad',
-    'pascalprecht.translate',
-    'ui.grid',
-    'ui.grid.selection',
-    'ui.grid.edit',
-    'ui.grid.pagination',
-    'ui.grid.resizeColumns',
-    'ui.grid.autoResize',
-    'sf.ui.grid',
-    'sf.console'
+    'pascalprecht.translate'
 ]);

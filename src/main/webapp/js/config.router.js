@@ -187,7 +187,11 @@ angular.module('app')
                   resolve: {
                       deps: ['$ocLazyLoad',
                           function( $ocLazyLoad ){
-                              return $ocLazyLoad.load('js/controllers/grid.js');
+                              return $ocLazyLoad.load('sf.ui.grid').then(
+                                  function(){
+                                      return $ocLazyLoad.load('js/controllers/grid.js');
+                                  }
+                              );
                           }]
                   }
               })
