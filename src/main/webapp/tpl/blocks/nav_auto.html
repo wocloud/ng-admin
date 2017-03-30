@@ -3,7 +3,7 @@
 
     <li ng-if="nav.children.length == 0" ui-sref-active="active">
         <a ng-href="{{nav.href}}">
-            <i class="{{nav.outIcon}}"></i>
+            <i class="{{nav.outIcon}} text-primary"></i>
             <span class="font-bold">{{nav.name}}</span>
         </a>
     </li>
@@ -14,13 +14,13 @@
                 <i class="fa fa-fw fa-angle-right text"></i>
                 <i class="fa fa-fw fa-angle-down text-active"></i>
             </span>
-            <i class="{{nav.outIcon}}"></i>
+            <i class="{{nav.outIcon}} text-primary"></i>
             <span class="font-bold">{{nav.name}}</span>
         </a>
         <ul class="nav nav-sub dk" ng-repeat="subNav in nav.children track by $index">
             <li ui-sref-active="active">
                 <a ng-href="{{subNav.href}}">
-                    <i class="{{subNav.outIcon}}"></i>
+                    <i class="{{subNav.outIcon}} text-primary-lter"></i>
                     <span class="font-bold">{{subNav.name}}</span>
                 </a>
             </li>
