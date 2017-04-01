@@ -1,0 +1,74 @@
+<meta charset="utf-8">
+<div class="modal-header">
+    <button id="modelCancel" type="button" class="close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">新增</h4>
+</div>
+<div class="modal-body">
+    <form id="addForm" role="form" class="sf-form form-validation" name="addForm">
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3 control-label">区域:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <select class="form-control" ng-model="add.zoneUuid" required>
+                    <option value="bd108b3f5aa543bf93e87b1f1ec21b56">ZONE1</option>
+                </select>
+            </div>
+            <span class="tip">*</span>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3 control-label">集群:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <select class="form-control" ng-model="add.clusterUuid" required>
+                    <option value="35530b88eb8040698c622a6230d251c8">CLUSTER1</option>
+                </select>
+            </div>
+            <span class="tip">*</span>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3 control-label">名称:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <input type="text" class="form-control" ng-model="add.name" ng-maxlength="128" placeholder="max length of 128 character" required>
+            </div>
+            <span class="tip">*</span>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3  control-label">描述:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <textarea class="form-control" rows="4" style="min-height: 50px;" ng-model="add.description" ng-maxlength="2048" placeholder="max length of 2048 character"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3  control-label">物理机IP:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <input type="text" class="form-control" ng-model="add.managementIp" placeholder="IPv4 address or DNS name" required>
+            </div>
+            <span class="tip">*</span>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3  control-label">SSH端口:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <input type="number" class="form-control" ng-model="add.sshPort" placeholder="22" required>
+            </div>
+            <span class="tip">*</span>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3  control-label">用户名:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <input type="text" class="form-control" ng-model="add.username" placeholder="ssh user name" required>
+            </div>
+            <span class="tip">*</span>
+        </div>
+        <div class="form-group">
+            <label class="col-md-3 col-sm-3  control-label">密码:</label>
+            <div class="col-md-6 col-sm-6 no-padder-sm">
+                <input type="text" class="form-control" ng-model="add.password" placeholder="ssh password" required>
+            </div>
+            <span class="tip">*</span>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-sm btn-primary" ng-click="ok(addForm.$valid, add)" ng-disabled="addForm.$invalid">OK</button>
+    <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">Close</button>
+</div>

@@ -1,0 +1,48 @@
+<div ng-controller="HostCtrl">
+    <sf-breadcrumb arr="breadcrumbs"></sf-breadcrumb>
+    <div class="wrapper">
+        <div class="row btn-toolbar">
+            <button class="btn btn-primary btn-sm" ng-click="refresh()">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <!--<button class="btn btn-primary btn-sm" ng-click="search()">-->
+                <!--<i class="fa fa-search"></i>-->
+            <!--</button>-->
+            <button class="btn btn-primary btn-sm" ng-click="addData()">
+                <i class="fa fa-plus"></i>
+                <span class="btn-name">添加</span>
+            </button>
+            <div class="btn-group dropdown pull-none" dropdown ng-hide="!selectedItem || selectedItem.length==0">
+                <button class="btn btn-primary btn-sm" dropdown-toggle>Action <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href>其他</a></li>
+                    <li class="divider"></li>
+                    <li ng-click="delData()"><a href>删除</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <sf-ui-grid arr="dataArr" col-arr="colArr" call-fn="callFn"></sf-ui-grid>
+
+    </div>
+</div>
+
+<!-- TEMPLATE -->
+<script type="text/ng-template" id="host_search">
+    <div ng-include="'views/common/search.html'"></div>
+</script>
+<script type="text/ng-template" id="host_add">
+    <div ng-include="'views/resources/host/host_add.html'"></div>
+</script>
+<script type="text/ng-template" id="host_delete">
+    <div class="modal-header">
+        <h3 class="modal-title">提示</h3>
+    </div>
+    <div class="modal-body" id="msgInfo">
+        确认要删除？
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-sm btn-primary" ng-click="ok()">OK</button>
+        <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

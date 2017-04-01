@@ -12,7 +12,7 @@ angular.module('app')
 
       // config
       $scope.app = {
-        name: 'Angular',
+        name: 'SkyForm',
         version: '1.3.3',
         // for chart colors
         color: {
@@ -55,8 +55,8 @@ angular.module('app')
 
       // angular translate
       $scope.lang = { isopen: false };
-      $scope.langs = {en:'English', de_DE:'German', it_IT:'Italian'};
-      $scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "English";
+      $scope.langs = {ch:'Chinese', en:'English', de_DE:'German', it_IT:'Italian'};
+      $scope.selectLang = $scope.langs[$translate.proposedLanguage()] || "Chinese";
       $scope.setLang = function(langKey, $event) {
         // set the current lang
         $scope.selectLang = $scope.langs[langKey];
@@ -99,6 +99,8 @@ angular.module('app')
       //login and get user's info
       User.getUserInfo().then(function(userInfo){
         $cookieStore.put('userInfo', userInfo);
+
+        $scope.USER = userInfo;
         //get menu real......
         //var params={
         //  userName:userInfo.userName

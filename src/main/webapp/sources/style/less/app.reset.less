@@ -21,7 +21,6 @@ body {
 
 // Links
 // -------------------------
-
 a {
   color: @link-color;
   text-decoration: none;
@@ -207,6 +206,9 @@ blockquote{
 .list-group-item{
   border-color: @list-group-item-border;
   padding-right: 15px;
+  .list-group-item-title{
+    font-weight: bolder;
+  }
   a&{
     &:hover,
     &:focus,
@@ -237,7 +239,7 @@ blockquote{
     background-color: @list-group-select-color !important;
     border-color: darken( @list-group-select-color , 5%);
   }
-  
+
   .list-group-alt & {
     &:nth-child(2n+2){
       background-color: rgba(0,0,0,0.02) !important;

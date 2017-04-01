@@ -59,3 +59,27 @@
 
 // sortable
 .sortable-placeholder{list-style: none;border: 1px dashed #CCC;min-height: 50px;margin-bottom: 5px}
+
+// uiGrid
+.ui-grid{
+  border:none!important;
+
+  .ui-grid-contents-wrapper{
+    min-height: 330px;
+
+    .ui-grid-render-container{
+
+      .ui-grid-header-cell-label{
+        font-weight: bold;
+      }
+      .ui-grid-row:nth-child(even) .ui-grid-cell,.ui-grid-row:nth-child(odd) .ui-grid-cell,.ui-grid-row-header-cell,.ui-grid-header-cell{
+        border:0 !important;
+      }
+      .ui-grid-menu-button{
+        background:none !important;
+        border:none !important;
+      }
+    }
+  }
+
+}

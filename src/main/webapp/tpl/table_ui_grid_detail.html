@@ -1,10 +1,6 @@
 <div ng-controller="GridDetailDemoCtrl">
     <div class="bg-light lter b-b wrapper padder-v-xs">
-        <div class="breadcrumbs">
-            <a class="path" ui-sref="app">Application /</a>
-            <a class="path" ui-sref="app.table.grid">uiGrid /</a>
-            <a class="path" ui-sref="app.table.grid-detail({name: current})">{{current}}</a>
-        </div>
+        <sf-breadcrumb arr="breadcrumbs"></sf-breadcrumb>
     </div>
     <div class="wrapper">
         <div class="row">

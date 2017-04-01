@@ -1,0 +1,115 @@
+<sf-breadcrumb arr="breadcrumbs"></sf-breadcrumb>
+<div class="wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">详细信息</div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">可用状态</span>{{current.state}}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">连接状态</span>{{current.status}}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">虚拟化类型</span>{{current.hypervisorType}}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">物理机 IP</span>{{current.managementIp}}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">UUID</span>{{current.uuid}}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">集群 UUID</span><a href="#" class="text-info">{{current.clusterUuid}}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">区域 UUID</span><a href="#" class="text-info">{{current.zoneUuid}}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">添加时间</span>{{current.createDate}}
+                        </li>
+                        <li class="list-group-item">
+                            <span class="list-group-item-title col-lg-4">上次更新时间</span>{{current.lastOpDate}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <ul class="timeline">
+                <li class="tl-header">
+                    <div class="btn btn-info">Now</div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">15:00</span>
+                        <div class="tl-content">
+                            Have a coffee
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">15:00</span>
+                        <div class="tl-content">
+                            Have a coffee
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">15:00</span>
+                        <div class="tl-content">
+                            Have a coffee
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">13:30</span>
+                        <div class="tl-content">
+                            Start to work
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">12:00</span>
+                        <div class="tl-content">
+                            Have lunch
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">9:00</span>
+                        <div class="tl-content">
+                            Start to work
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">8:00</span>
+                        <div class="tl-content">
+                            Go to work
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-item">
+                    <div class="tl-wrap b-info">
+                        <span class="tl-date">7:00</span>
+                        <div class="tl-content">
+                            Get up and have breakfast
+                        </div>
+                    </div>
+                </li>
+                <li class="tl-header">
+                    <div class="btn btn-sm btn-default btn-rounded">more</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

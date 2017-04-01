@@ -15,7 +15,8 @@
                     i18nService.setCurrentLang("zh-cn");
 
                     //var index = 0;
-                    scope.selectedRows = [];
+                    scope.selectItem = {};      //当前事件操作的row
+                    scope.selectedRows = [];    //所有已选中的rows
 
                     scope.gridOptions = {
                         columnDefs: scope.colArr,
@@ -51,9 +52,9 @@
                         //    }
                         //},
                         modifierKeysToMultiSelect: false ,//默认false,为true时只能 按ctrl或shift键进行多选, multiSelect 必须为true;
-                        multiSelect: true ,// 是否可以选择多个,默认为true;
+                        multiSelect: false ,// 是否可以选择多个,默认为true;
                         noUnselect: false,//默认false,选中后是否可以取消选中
-                        selectionRowHeaderWidth:30 ,//默认30 ，设置选择列的宽度；
+                        selectionRowHeaderWidth:30,//默认30 ，设置选择列的宽度；
 
                         //---------------api---------------------
                         onRegisterApi: function(gridApi) {
@@ -69,27 +70,30 @@
                             scope.gridApi.selection.on.rowSelectionChanged(scope,function(row,event){
                                 if(row && row.isSelected){
                                     scope.selectedRows.push(row.entity);
+                                    scope.selectItem = row.entity;
                                 } else {
+                                    scope.selectItem = null;
                                     var indexNum = $.inArray(row.entity, scope.selectedRows);
                                     if(indexNum > -1) {
                                         scope.selectedRows.splice(indexNum, 1);
                                     }
                                 }
-                                scope.callFn(scope.selectedRows);
+                                scope.callFn(scope.selectItem); //单选值
+                                //scope.callFn(scope.selectedRows); //多选值
                             });
                         }
                     };
 
                     var getPage = function(curPage, pageSize) {
+                        var mydefalutData  = scope.arr;
                         //index = 0;
                         var firstRow = (curPage - 1) * pageSize;
                         scope.gridOptions.totalItems = mydefalutData.length;
                         scope.gridOptions.data = mydefalutData.slice(firstRow, firstRow + pageSize);
                     };
-                    var mydefalutData  = scope.arr;
 
                     scope.$watch('arr',function(newValue, oldValue){
-                        if(newValue&&oldValue&&newValue.length!=oldValue.length){
+                        if(newValue && oldValue && newValue.length!=oldValue.length){
                             getPage(1, scope.gridOptions.paginationPageSize);
                         }
                     },true);

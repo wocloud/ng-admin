@@ -1,24 +1,39 @@
 .sf-form .form-group {
   display: inline-block;
-  float: left;
   width: 100%;
   margin-bottom: 5px;
 
   .control-label {
     text-align: right;
-    height: 30px;
-    line-height: 30px;
+    height: @normal-md-height;
+    line-height: @normal-md-height;
   }
 
   div .form-control{
-    height: 30px;
-    line-height: 30px;
+    height: @normal-md-height;
+    line-height: @normal-md-height;
   }
 
   .tip,.error {
     text-align: left;
-    height: 30px;
-    line-height: 30px;
+    height: @normal-md-height;
+    line-height: @normal-md-height;
     color: #f05050;
+  }
+}
+
+.query-group {
+  padding: 5px;
+
+  .control-label {
+    text-align: right;
+    height: @normal-md-height;
+    line-height: @normal-md-height;
+  }
+
+  .form-control{
+    width: 70%;
+    height: @normal-md-height;
+    line-height: @normal-md-height;
   }
 }

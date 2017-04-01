@@ -15,6 +15,10 @@ app.filter('positionFilter', function(){
 
 app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
 
+    $scope.breadcrumbs = [
+        {'path': 'app.table.grid', 'name': 'uiGrid'}
+    ];
+
     $scope.colArr = [
         {
             field: 'name',
@@ -845,6 +849,11 @@ app.controller('GridDemoCtrl', function($scope,$modal,$log,$timeout) {
 ///////////////////////////////////////////////////
 app.controller('GridDetailDemoCtrl', function($scope, $stateParams) {
     $scope.current = $stateParams.name;
+
+    $scope.breadcrumbs = [
+        {'path': 'app.table.grid', 'name': 'uiGrid'},
+        {'path': 'app.table.grid-detail({name: "'+ $scope.current +'"})', 'name': $scope.current}
+    ];
 });
 
 //新增修改

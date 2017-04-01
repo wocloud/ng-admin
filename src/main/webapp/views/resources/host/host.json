@@ -1,0 +1,44 @@
+{
+  "errorCode": 0,
+  "status": true,
+  "result": [
+    {
+      "availableMemoryCapacity": 5373468672,
+      "totalCpuCapacity": 160,
+      "status": "Connected",
+      "clusterUuid": "35530b88eb8040698c622a6230d251c8",
+      "state": "Enabled",
+      "managementIp": "10.10.182.6",
+      "sshPort": 22,
+      "zoneUuid": "bd108b3f5aa543bf93e87b1f1ec21b56",
+      "totalMemoryCapacity": 16647757824,
+      "lastOpDate": "Mar 14, 2017 2:36:01 PM",
+      "username": "root",
+      "availableCpuCapacity": 149,
+      "description": "10.10.182.6",
+      "name": "host6",
+      "uuid": "3c886fa148d541ee90d07fafbbfd3210",
+      "createDate": "Mar 14, 2017 12:13:19 PM",
+      "hypervisorType": "KVM"
+    },
+    {
+      "availableMemoryCapacity": 47783817216,
+      "totalCpuCapacity": 160,
+      "status": "Connected",
+      "clusterUuid": "35530b88eb8040698c622a6230d251c8",
+      "state": "Enabled",
+      "managementIp": "10.10.184.26",
+      "sshPort": 22,
+      "zoneUuid": "bd108b3f5aa543bf93e87b1f1ec21b56",
+      "totalMemoryCapacity": 50468171776,
+      "lastOpDate": "Mar 24, 2017 6:53:14 PM",
+      "username": "root",
+      "availableCpuCapacity": 157,
+      "description": null,
+      "name": "host26",
+      "uuid": "76305c830566428a9ce3bad37d813492",
+      "createDate": "Mar 24, 2017 6:24:23 PM",
+      "hypervisorType": "KVM"
+    }
+  ]
+}

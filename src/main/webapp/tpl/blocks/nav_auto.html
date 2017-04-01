@@ -28,6 +28,31 @@
     </li>
 </ul>
 
+<!-- temp nav -->
+<ul class="nav">
+    <li ng-class="{active:$state.includes('app.resources')}">
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="fa fa-cubes text-primary"></i><span>Resources</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>Resource</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.resources.host">
+                    <i class="fa fa-cube text-primary-lter"></i><span>Host</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
 <!-- fixed nav for demo -->
 <ul class="nav">
     <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
