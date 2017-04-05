@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+<div class="modal-header">
+    <button id="modelCancel" type="button" class="close" ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">查询</h4>
+</div>
+<div class="modal-body">
+    <table class="table search-table table-condensed">
+        <tr>
+            <th style="width: 30%;">FIELD</th>
+            <th style="width: 15%;">OP</th>
+            <th>VALUE</th>
+            <th style="width: 10%;">ACTION</th>
+        </tr>
+
+        <tr>
+            <td>
+                <select style="width: 98%;" ng-change="nameChange(curName)" ng-model="curName">
+                    <option ng-repeat="option in searchNameObject track by $index" value="{{option.value}}">{{option.name}}</option>
+                </select>
+            </td>
+            <td>
+                <select style="width: 98%;">
+                    <option ng-repeat="option in searchOpObject track by $index" value="{{option.name}}">{{option.name}}</option>
+                </select>
+            </td>
+            <td>
+                <input ng-show="currentConditionName.type=='string'" type="text" style="width: 98%;" ng-model="curValue">
+                <select ng-show="currentConditionName.type=='enum'" style="width: 98%;" ng-model="curValue">
+                    <option ng-repeat="option in currentConditionName.options track by $index" value="{{option.value}}">{{option.name}}</option>
+                </select>
+                <input ng-show="currentConditionName.type=='datetime'" type="datetime" style="width: 98%;" ng-model="curValue">
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="addCondition($event, curValue)" ng-disabled="currentCondition.value==''">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <div class="alert alert-danger" ng-show="duplicateCondition">
+        Duplicated condition
+    </div>
+
+    <table class="table table-striped" ng-show="conditions.length > 0">
+        <tr>
+            <th style="width: 60%;">CONDITIONS</th>
+            <th>ACTION</th>
+        </tr>
+        <tr ng-repeat="condition in conditionsText track by $index">
+            <td>
+                <span>{{condition.name}}</span>
+                <span>{{condition.op}}</span>
+                <span>{{condition.value}}</span>
+            </td>
+            <td>
+                <button class="btn btn-primary btn-sm" ng-click="deleteCondition($event)"><i class="fa fa-minus"></i></button>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-sm btn-primary" ng-click="ok()">OK</button>
+    <button type="button" class="btn btn-sm btn-default" ng-click="cancel()">Close</button>
+</div>
