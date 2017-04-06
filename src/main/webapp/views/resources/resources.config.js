@@ -14,10 +14,19 @@ app.filter('Status', function(){
         $stateProvider
             .state('app.resources', {
                 url: '/resources',
-                template: '<div ui-view></div>'
+                template: '<div ui-view class="fade-in"></div>',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                        function ($ocLazyLoad) {
+                            return $ocLazyLoad.load([
+                                'views/resources/resources.service.js',
+                                'views/common/search.js'
+                            ]);
+                        }]
+                }
             })
             .state('app.resources.host', {
-                url: '/host',
+                url: '/host?uuid',
                 templateUrl: 'views/resources/host/host.html',
                 resolve: {
                     deps: ['$ocLazyLoad',
@@ -25,9 +34,7 @@ app.filter('Status', function(){
                             return $ocLazyLoad.load('sf.ui.grid').then(
                                 function () {
                                     return $ocLazyLoad.load([
-                                        'views/resources/resources.service.js',
-                                        'views/resources/host/host.js',
-                                        'views/common/search.js'
+                                        'views/resources/host/host.js'
                                     ]);
                                 }
                             );
@@ -42,8 +49,39 @@ app.filter('Status', function(){
                     deps: ['$ocLazyLoad',
                         function( $ocLazyLoad ){
                             return $ocLazyLoad.load([
-                                'views/resources/resources.service.js',
                                 'views/resources/host/host.js'
+                            ]);
+                        }]
+                }
+            })
+            .state('app.resources.vm', {
+                url: '/vm',
+                templateUrl: 'views/resources/vm/vm.html',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                        function ($ocLazyLoad) {
+                            return $ocLazyLoad.load('sf.ui.grid').then(
+                                function () {
+                                    return $ocLazyLoad.load([
+                                        'views/resources/vm/vm.js',
+                                        'vendor/jquery/bootstrapwizard/js/prettify.js',
+                                        'vendor/jquery/bootstrapwizard/js/bootstrap-wizard.min.js',
+                                        'vendor/jquery/bootstrapwizard/css/bootstrap-wizard.css'
+                                    ]);
+                                }
+                            );
+                        }]
+                }
+            })
+            .state('app.resources.vm_detail', {
+                url: '/vm_detail?uuid',
+                templateUrl: 'views/resources/vm/vm_detail.html',
+                controller: 'VMDetailCtrl',
+                resolve: {
+                    deps: ['$ocLazyLoad',
+                        function( $ocLazyLoad ){
+                            return $ocLazyLoad.load([
+                                'views/resources/vm/vm.js'
                             ]);
                         }]
                 }

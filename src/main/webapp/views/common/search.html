@@ -16,7 +16,7 @@
 
         <tr>
             <td>
-                <select style="width: 98%;" ng-change="nameChange(curName)" ng-model="curName">
+                <select style="width: 98%;" ng-change="nameChange(curName, curValue)" ng-model="curName">
                     <option ng-repeat="option in searchNameObject track by $index" value="{{option.value}}">{{option.name}}</option>
                 </select>
             </td>
@@ -28,9 +28,14 @@
             <td>
                 <input ng-show="currentConditionName.type=='string'" type="text" style="width: 98%;" ng-model="curValue">
                 <select ng-show="currentConditionName.type=='enum'" style="width: 98%;" ng-model="curValue">
+                    <option ng-if="option.value=='' || option.value==null || option.value==undefined" value="">--请选择--</option>
                     <option ng-repeat="option in currentConditionName.options track by $index" value="{{option.value}}">{{option.name}}</option>
                 </select>
-                <input ng-show="currentConditionName.type=='datetime'" type="datetime" style="width: 98%;" ng-model="curValue">
+                <p class="form-horizontal" ng-show="currentConditionName.type=='datetime'">
+                    <input type="datetime" style="width: 88%;" class="form-inline" ng-model="curValue"
+                           datepicker-popup="{{format}}" is-open="opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    <button type="button" class="btn btn-default btn-sm form-inline" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                </p>
             </td>
             <td>
                 <button type="button" class="btn btn-primary btn-sm" ng-click="addCondition($event, curValue)" ng-disabled="currentCondition.value==''">
@@ -56,7 +61,7 @@
                 <span>{{condition.value}}</span>
             </td>
             <td>
-                <button class="btn btn-primary btn-sm" ng-click="deleteCondition($event)"><i class="fa fa-minus"></i></button>
+                <button class="btn btn-primary btn-sm" ng-click="deleteCondition($event, $index)"><i class="fa fa-minus"></i></button>
             </td>
         </tr>
     </table>

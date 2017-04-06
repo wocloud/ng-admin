@@ -1,4 +1,4 @@
-<div ng-controller="HostCtrl">
+<div ng-controller="VMCtrl">
     <sf-breadcrumb arr="breadcrumbs"></sf-breadcrumb>
     <div class="wrapper">
         <div class="row btn-toolbar">
@@ -15,6 +15,9 @@
             <div class="btn-group dropdown pull-none" dropdown ng-hide="!selectedItem || selectedItem.length==0">
                 <button class="btn btn-primary btn-sm" dropdown-toggle>更多操作<span class="caret"></span></button>
                 <ul class="dropdown-menu">
+                    <li><a href>停止</a></li>
+                    <li><a href>重启</a></li>
+                    <li class="divider"></li>
                     <li ng-click="delData()"><a href>删除</a></li>
                 </ul>
             </div>
@@ -26,13 +29,13 @@
 </div>
 
 <!-- TEMPLATE -->
-<script type="text/ng-template" id="host_search">
+<script type="text/ng-template" id="vm_search">
     <div ng-include="'views/common/search.html'"></div>
 </script>
-<script type="text/ng-template" id="host_add">
-    <div ng-include="'views/resources/host/host_add.html'"></div>
+<script type="text/ng-template" id="vm_add">
+    <div ng-include="'views/resources/vm/vm_add.html'"></div>
 </script>
-<script type="text/ng-template" id="host_delete">
+<script type="text/ng-template" id="vm_delete">
     <div class="modal-header">
         <h3 class="modal-title">提示</h3>
     </div>

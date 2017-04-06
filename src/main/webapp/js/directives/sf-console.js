@@ -15,7 +15,7 @@ angular.module('sf.console', [])
                 var i =  elem.find("i");
                 i.attr("class","text-xs");
                 if(scope.state){
-                    if(scope.state == 'Enabled' || scope.state == 'Connected') {
+                    if(scope.state == 'Enabled' || scope.state == 'Connected' || scope.state == 'Running') {
                         i.addClass("fa fa-circle success_i");
                     }
                     if(scope.state == 'Maintenance' || scope.state.indexOf('ing') > -1) {
@@ -39,24 +39,5 @@ angular.module('sf.console', [])
                 '<a class="path" ui-sref="app.dashboard-v1">Application</a>' +
                 '<a class="path" ng-repeat="item in arr track by $index" ui-sref="{{item.path}}">/ {{item.name}}</a>' +
             '</div>'
-        }
-    })
-    .directive('sfSearchGroup', function() {
-        return {
-            restrict: 'A',
-            scope:{
-                callFn:'='
-            },
-            link: function(scope, elem, attr){
-
-
-
-                function myKeyUp(e){
-                    var keycode = window.event?e.keyCode:e.which;
-                    if(keycode==13){
-                        scope.callFn();
-                    }
-                }
-            }
         }
     });

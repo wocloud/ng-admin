@@ -5,12 +5,17 @@ app.service('resourceService', ['$resource', '$q', 'fakeMapping', function($reso
     
     var self = this;
     
-    var HostServiceURL = '/services/api';
-    
+    var HostServiceURL = '/services/host',
+        VmServiceURL = '/services/vm';
+
     self.ResourceCMD = {
         'host_query'         : HostServiceURL + '/QueryHost',
         'host_create'        : HostServiceURL + '/AddKVMHost',
-        'host_destroy'       : HostServiceURL + '/DeleteHost'
+        'host_destroy'       : HostServiceURL + '/DeleteHost',
+
+        'vm_query'         : VmServiceURL + '/QueryVmInstance',
+        'vm_create'        : VmServiceURL + '/AddKVMHost',
+        'vm_destroy'       : VmServiceURL + '/DeleteHost'
     };
 
     // before the ajax send
@@ -19,7 +24,7 @@ app.service('resourceService', ['$resource', '$q', 'fakeMapping', function($reso
             paramObj = {};
         }
         if(!paramObj.session) {
-            paramObj.session = {"uuid": "2128afad35ab4857bca09a8437825f7e"};
+            paramObj.session = {"uuid": "0c3dd7e478754452aea2f2fd483c85a3"};
         }
         var res_cmd = $resource(cmd, paramObj, {
             get: {method:'GET'},
@@ -30,6 +35,7 @@ app.service('resourceService', ['$resource', '$q', 'fakeMapping', function($reso
     }
 
     // api list
+    /////////////////////  计算节点  //////////////////////////
     self.host_query = function(params) {
         var res_cmd = transfer(self.ResourceCMD.host_query, params);
         fakeMapping.scheme(self.ResourceCMD.host_query, {
@@ -53,6 +59,34 @@ app.service('resourceService', ['$resource', '$q', 'fakeMapping', function($reso
 
     self.host_destroy = function(params) {
         var res_cmd = transfer(self.ResourceCMD.host_destroy, params);
+        var task = $q.defer();
+        res_cmd.post(params,function(response) {
+            task.resolve(response.toJSON());
+        });
+        return task.promise;
+    };
+
+    /////////////////////  虚拟机  //////////////////////////
+    self.vm_query = function(params) {
+        var res_cmd = transfer(self.ResourceCMD.vm_query, params);
+        var task = $q.defer();
+        res_cmd.post(params,function(response) {
+            task.resolve(response.toJSON());
+        });
+        return task.promise;
+    };
+
+    self.vm_create = function(params) {
+        var res_cmd = transfer(self.ResourceCMD.vm_create, params);
+        var task = $q.defer();
+        res_cmd.post(params,function(response) {
+            task.resolve(response.toJSON());
+        });
+        return task.promise;
+    };
+
+    self.vm_destroy = function(params) {
+        var res_cmd = transfer(self.ResourceCMD.vm_destroy, params);
         var task = $q.defer();
         res_cmd.post(params,function(response) {
             task.resolve(response.toJSON());
